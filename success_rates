@@ -1,0 +1,9 @@
+SELECT 
+  main_category,
+  CONCAT(ROUND(AVG(pledged/goal) * 100, 2),'%') AS avg_pct_funded,
+  COUNT(*) AS total_projects,
+  SUM(CASE WHEN state = 'successful' THEN 1 ELSE 0 END) AS successful_projects,
+  CONCAT(ROUND(SUM(CASE WHEN state = 'successful' THEN 1 ELSE 0 END) * 1.0 / COUNT(*),4)*100,'%') AS success_rate
+FROM ksprojects
+GROUP BY main_category
+ORDER BY avg_pct_funded,2 DESC, success_rate,2 DESC;
