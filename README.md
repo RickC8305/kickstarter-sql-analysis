@@ -32,3 +32,6 @@ Throughout the project, I explored different questions using SQL, including:
 
     Data Formatting:
     Formatted numerical results as percentages with rounding and string concatenation to improve readability.
+
+Dataset can be found here:
+https://www.kaggle.com/datasets/kemical/kickstarter-projects?utm_source=openai
